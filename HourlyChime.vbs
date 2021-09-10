@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "C:\Users\rodri\PycharmProjects\HourlyChimeProject\HourlyChime.bat", 0, True
