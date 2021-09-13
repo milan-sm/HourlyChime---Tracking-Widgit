@@ -48,6 +48,7 @@ def main():
 
     # ## GUI Labels ## #
     #region
+    deadline_name = Label(root, text='Time Left for CORE Lab Application', font=('Helvetica', 20), fg='darkorange', bg='gray')
     countdown_label = Label(root, text='', font=('Helvetica', 48), fg='darkorange', bg='gray')
     input_request_label = Label(root, text='Would you like to input new completed activities?', font=('Helvetica', 14))
     input_decline_label = Label(root, text='Shall I request input at a later time?', font=('Helvetica', 14))
@@ -63,13 +64,14 @@ def main():
 
     # ## Label and Button Locations ## #
     #region
-    countdown_label.grid(row=0, column=0, columnspan=5, pady=30)
-    input_request_label.grid(row=1, column=0, columnspan=5, pady=15)
-    input_accept_button.grid(row=2, column=0, columnspan=5)
+    deadline_name.grid(row=0, column=0, columnspan=5, pady=30)
+    countdown_label.grid(row=1, column=0, columnspan=5, pady=30)
+    input_request_label.grid(row=2, column=0, columnspan=5, pady=15)
+    input_accept_button.grid(row=3, column=0, columnspan=5)
 
-    input_decline_label.grid(row=4, column=0, columnspan=5, pady=15)
-    input_decline_button_1.grid(row=5, column=1)
-    input_decline_button_2.grid(row=5, column=3)
+    input_decline_label.grid(row=5, column=0, columnspan=5, pady=15)
+    input_decline_button_1.grid(row=6, column=1)
+    input_decline_button_2.grid(row=6, column=3)
 
     quit_program_button.grid(row=6, column=4, pady=15)
     #endregion

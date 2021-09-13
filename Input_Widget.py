@@ -103,16 +103,18 @@ def Toplevel():
         lst = [s_activity, f_activity, m_activity, r_activity, w_activity, a_activity]
         for i in lst:
             rows.append(i.get_info())
-        df = pd.DataFrame(rows,index=["Science","Finacne","Manuten","Research", "Workout", "Art"], 
-                          columns=['Hours completed'])
-        print(rows)
-        print(df)
+        #df = pd.DataFrame(rows,index=["Science","Finacne","Manuten","Research", "Workout", "Art"], 
+        #                  columns=['Hours completed'])
+        #print(rows)
+        #print(df)
 
         #Writing input to csv file
+        rows.append(IPC.GetLastInput())
         with open('input.csv', 'a', newline='') as csvfile:
             my_writer = csv.writer(csvfile, delimiter=' ')
             my_writer.writerow(rows)
 
+        IPC.UpdateLastInput()
         Input_Widget.destroy()
 
 # ## Buttons
@@ -123,8 +125,8 @@ def Toplevel():
                     font=12,)
     key_label.grid(row=1, column=0, columnspan=4, pady=40)
 
-    input_label = Button(Input_Widget, text='Input', font=12, command= get_all_info)
-    input_label.grid(row=2, column=0, columnspan=4, pady=40)
+    input_button = Button(Input_Widget, text='Input', font=12, command= get_all_info)
+    input_button.grid(row=2, column=0, columnspan=4, pady=40)
 
     Input_Widget.mainloop()
     
